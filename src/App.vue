@@ -1,17 +1,19 @@
 <template>
   <div id="nav">
     <router-link to="/">Início</router-link> -
-    <router-link to="/basket">Carrinho (0)</router-link> 
+    <router-link to="/basket">Carrinho (0)</router-link>
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <script>
-
-  export default {
-
+export default {
+  created() {
+   // invocar uma ação da store
+   this.$store.dispatch('loadProducts')
   }
-  
+}
+
 </script>
 
 
